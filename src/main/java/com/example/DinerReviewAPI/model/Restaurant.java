@@ -1,52 +1,34 @@
 package com.example.DinerReviewAPI.model;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
 
-import lombok.Data;
-
-
-// This is the Restaurant class. It is an entity class that maps to the RESTAURANTS table in the database.
 @Entity
-@Table(name = "RESTAURANTS")
-@Data
+@Getter
+@Setter
+@RequiredArgsConstructor
 public class Restaurant {
     @Id
     @GeneratedValue
     private Long id;
 
-    @Column(name = "NAME")
     private String name;
 
-    @Column(name = "ADDRESS")
-    private String address;
+    private String line1;
+    private String city;
+    private String state;
+    private String zipCode;
 
-    @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
+    private String website;
 
-    @Column(name = "PEANUT_ALLERGY_SCORE")
-    private Integer peanutAllergyScore;
-
-    @Column(name = "EGG_ALLERGY_SCORE")
-    private Integer eggAllergyScore;
-
-    @Column(name = "DAIRY_ALLERGY_SCORE")
-    private Integer dairyAllergyScore;
-
-    @Column(name = "PRICE")
-    private String price;
-
-    @Column(name = "HOURS")
-    private String hours;
-
-    @Column(name = "IMAGE")
-    private String image;
-
-    @Column(name = "RATING")
-    private Integer rating;
-
-    
+    private String overallScore;
+    private String peanutScore;
+    private String dairyScore;
+    private String eggScore;
 }
