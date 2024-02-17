@@ -1,12 +1,13 @@
 package com.example.DinerReviewAPI.repository;
 
 import com.example.DinerReviewAPI.model.DiningReview;
+import com.example.DinerReviewAPI.model.ReviewStatus;
 import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
 
 
 public interface DiningReviewRepository extends CrudRepository<DiningReview, Long> {
-    //get the list of all dinig reviews that are pending 
-    Iterable<DiningReview> findByStatus(String status);
-    //get the set of all approved dinging reviews belonging to a specific restaurant 
-    Iterable<DiningReview> findByRestaurantIdAndStatus(Long restaurantId, String status);
+    List<DiningReview> findDiningReviewsByRestaurantIdAndStatus(Long restaurantId, ReviewStatus diningReviewStatus);
+    List<DiningReview> findDiningReviewsByStatus(ReviewStatus diningReviewStatus);
 }
