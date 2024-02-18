@@ -30,6 +30,11 @@ public class DiningReviewController {
         this.restaurantRepository = restaurantRepository;
     }
 
+    @GetMapping
+    public Iterable<DiningReview> getDiningReviews() {
+        return diningReviewRepository.findAll();
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void addDiningReview(@RequestBody DiningReview diningReview) {

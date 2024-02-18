@@ -23,6 +23,12 @@ public class UserController {
     public void addUser(@RequestBody User user) {
         validateUser(user);
          userRepository.save(user);
+
+    }
+
+    @GetMapping
+    public Iterable<User> getUsers() {
+        return userRepository.findAll();
     }
 
     @GetMapping("/{userName}")
