@@ -19,7 +19,7 @@ public class Restaurant {
 
     private String name;
 
-    private String line1;
+    
     private String city;
     private String state;
     private String zipCode;

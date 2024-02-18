@@ -17,12 +17,14 @@ public class DiningReview {
     @GeneratedValue
     private Long id;
 
+    private String submittedBy;
     private Long restaurantId;
-    private String reviewerName;
     private String review;
+
     private Integer peanutScore;
     private Integer eggScore;
     private Integer dairyScore;
-    private String status;
+    
+    private ReviewStatus status;
 
 }
